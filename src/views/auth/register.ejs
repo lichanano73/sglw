@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <form action="register" method="POST">
+                <label for="user">Usuario</label>
+                <input type="text" name="user" required>
+
+                <label for="name">Nombre completo</label>
+                <input type="text" name="name" required>
+
+                <label for="rol">Rol</label>
+                <select name="rol" id="rol" class="select-css">
+                    <option value="admin">Admin</option>
+                    <option value="data entry">Data entry</option>
+                </select>
+
+                <label for="pass">Contraseña</label>
+                <input type="password" name="pass" required>
+
+                <div style="display: inline;">
+                    <a href="/" class="btn">Cancelar</a>
+                    <input type="submit" value="Registrar">
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    <form action="login" method="POST">
+                        <input type="text" name="user" id="user" placeholder="User" required>
+                        <input type="password" name="pass" id="pass" placeholder="Password" required>
+                        <input type="submit" class="btn btn-success" value="login">
+                    </form>
+                </div>
+                <a href="/users/register">Registrar</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
