@@ -1,25 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
-    <div class="container">
-        <div class="row">
+<%- include('../template/cabecera', {titulo: 'Login'}) %>
+<%- include('../template/navbar') %>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
-                    <form action="login" method="POST">
-                        <input type="text" name="user" id="user" placeholder="User" required>
-                        <input type="password" name="pass" id="pass" placeholder="Password" required>
-                        <input type="submit" class="btn btn-success" value="login">
+
+
+
+                    <form action="/users/login" method="POST">
+                        <div class="row">
+                          <div class="col">
+                            <input type="text" class="form-control" name="user" id="user" placeholder="User" required>
+                          </div>
+                          <div class="col">
+                            <input type="password" class="form-control" name="pass" id="pass" placeholder="Password" required>
+                          </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" class="btn btn-success" value="login">Ingresar</button>
                     </form>
+
+
+
+
+
                 </div>
-                <a href="/users/register">Registrar</a>
+                <a href="/users/register">Registrar Usuario</a>
             </div>
-        </div>
+
+        </div>        
     </div>
-</body>
-</html>
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<% if(typeof alert != 'undefined'){ %>
+    
+    <script>
+        Swal.fire({
+            title:  '<%= alertTitle  %>',
+            text:   '<%= alerteMessage  %>',
+            icon:   '<%= alertIcon  %>',
+            showConfirmButton:  <%= showConfirmButton %>,
+            timer:  <%= timer  %>,
+        }).then(()=>{
+            window.location = '/<%= ruta %>'
+        })
+    </script>
+
+<% } %>
+
+<%- include('../template/footer') %>

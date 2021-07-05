@@ -1,9 +1,9 @@
-// Invocamos express
+//1 Invocamos express
 const express = require('express');
 const app = express();
 const path = require('path');
 
-//Seteamos urlencoded para capturar los datos
+//2 Seteamos urlencoded para capturar los datos
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
@@ -12,7 +12,8 @@ const dotenv = require('dotenv');
 dotenv.config({path:'./env/.env'});
 
 //4 El directorio public
-app.use('/resourses',express.static('public'));
+//app.use('/resourses',express.static('public'));
+app.use(express.static(path.join(__dirname,'public')))
 app.use('/resourses', express.static(__dirname + '/public'));
 
 //5 Motor de plantillas ejs
@@ -35,12 +36,7 @@ app.use(session({
 const connection = require('./database/db');
 
 //9 Routes
-app.use('/users',require('./routes/users'));
-
-app.get('/',(req,res)=>{
-    res.send('Holis Mundo!');
-})
-
+app.use('/',require('./routes/index'));
 
 //Iniciamos Server
 const port = 7000;

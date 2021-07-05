@@ -1,0 +1,27 @@
+#contenedor {
+    background-color: red;
+    height: 900px;
+}
+#cabecera{
+    background-color: royalblue;
+    height: 100px;
+}
+
+#sec1 {
+    background-color: sienna;
+    height: 300px;
+}
+
+h1{
+    color: #fff;
+}
+
+#cab1 {
+    background-color: teal;
+}
+#cab2 {
+    background-color: whitesmoke;
+}
+#cab3 {
+    background-color: rgb(76, 173, 165);
+}
